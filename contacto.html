@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Contactar a Mauro Lorente</title>
+</head>
+<body>
+    <header class="header_container">
+        <img src="img/logo_unco.jpeg" alt="UnCo" width="130" height="130">
+        <h1 class="h1_index">Mauro Lorente</h1>
+    </header>
+    <aside>
+        <nav class="nav_container">
+            <a href="index.html">Pagina inicio</a>            
+        </nav>
+    </aside>
+    <main class="main_container">
+
+        <form action="form.php" method="get">
+
+            <fieldset>
+                <legend class="fieldset_legend">Datos personales:</legend>
+
+                <div class="grid_form">
+                <div>
+                <label for="nombre">Nombre (*):</label><br>
+                <input type="text" id="nombre" name="nombre" maxlength="20" size="50" required><br><br>
+                </div>
+                <div>
+                <label for="apellido">Apellido:</label><br>
+                <input type="text" id="apellido" name="apellido" maxlength="20" size="50"><br><br>
+                </div>
+                <div>
+                <label for="email">Email (*):</label><br>
+                <input type="email" id="email" name="email" size="50" required><br><br>
+                </div>
+                <div>
+                <label for="telefono">Telefono:</label><br>
+                <input type="text" id="telefono" name="telefono" placeholder="Ingrese un telefono" size="50"><br><br>
+                </div>
+                </div>
+
+                <label for="birthday">Fecha nacimiento:</label><br>
+                <input type="date" id="birthday" name="birthday"><br><br>
+
+                <label for="direccion">Direccion:</label><br>
+                <textarea id="direccion" name="direccion" rows="7" cols="113">.</textarea><br><br>
+                
+                <label for="edad">Edad (entre 16 y 120):</label><br>
+                <div class="div_edad">
+                    <input type="range" id="edad" name="edad" min="16" max="120" value="59"><br>
+                    <p><output id="edad_valor"></output></p><br>
+                    <!-- <p>Edad indicada: <output id="edad_valor"></output></p><br> -->
+                </div>
+
+                <div class="grid_form">
+                <div>
+                <label for="provincia">Seleccione una provincia:</label><br>
+                <input list="provincias" name="provincia" id="provincia" size="50"><br><br>
+                <datalist id="provincias">
+                    <option value="Rio Negro">
+                    <option value="Neuquen">
+                    <option value="Chubut">
+                    <option value="Santa Cruz">
+                    <option value="La Pampa">
+                </datalist>
+                </div>
+
+                <div>
+                <label for="codigopostal">Codigo Postal:</label><br>
+                <input type="text" id="codigopostal" name="codigopostal" pattern="[A-Z]{1}[1-4]{4}[A-Z]{3}" size="50" placeholder="formato aceptado 1 mayus. 4 digitos 3 mayus. ej: A1234ABC""><br><br><br>
+                </div>
+                </div>
+
+                <fieldset class="fieldset_form">
+                    <legend class="legend_form">Seleccione como prefiere ser contactado:</legend>
+                    <div class="fieldset_div">
+                        <input type="radio" id="rdb1" name="contacto" value="Correo-electronico" checked>
+                        <label for="rdb1">Correo electronico</label>
+                        <input type="radio" id="rdb2" name="contacto" value="Correo-postal">
+                        <label for="rdb2">Correo postal</label>
+                        <input type="radio" id="rdb3" name="contacto" value="Telefono">
+                        <label for="rdb3">Telefono</label><br><br>
+                    </div>
+                </fieldset>
+
+                <fieldset class="fieldset_form">
+                    <legend class="legend_form">Suscribirse a:</legend>
+                    <div class="fieldset_div">
+                        <input type="checkbox" id="cbox1" value="noticias">
+                        <label for="cbox1">Noticias</label>
+                        <input type="checkbox" id="cbox2" value="promociones">
+                        <label for="cbox2">Promociones</label>
+                        <input type="checkbox" id="cbox3" value="alertas" checked>
+                        <label for="cbox3">Alertas</label>
+                        <input type="checkbox" id="cbox4" value="eventos">
+                        <label for="cbox4">Eventos</label><br><br>
+                    </div>
+                </fieldset>
+
+                <input class="button_form" type="submit" value="Enviar"><br><br>
+
+                <label>(*) Indica campos requeridos</label><br><br>
+
+            </fieldset>
+
+            <fieldset class="fieldset_tabla">
+                <legend class="fieldset_legend">Tabla con datos personales:</legend>
+                <button class="button_form" type="button" onclick="alert('Llenar tabla con los datos ingresados')">Llenar tabla</button><br><br>
+
+                <table>
+                    <tr>
+                        <th>Campo</th>
+                        <th>Valor</th>                        
+                    </tr>
+                    <tr>
+                        <td>Nombre</td>
+                        <td></td>                        
+                    </tr>
+                    <tr>
+                        <td>Apellido</td>
+                        <td></td>                        
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Telefono</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Fecha nacimiento</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Direccion</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Edad</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Provincia</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Codigo postal</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Forma contacto elegida</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Suscripciones</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </fieldset>
+            
+        </form>
+    </main>
+
+    <footer class="footer_container">
+        <!-- <i class="material-icons">copyright</i> -->
+        <p>® H. Mauro Lorente - 2024 - Universidad Nacional del Comahue</p>
+        <p>Dirección: Monseñor Esandi y Ricardo Balbín</p>
+        <p>Viedma - Rio Negro - Republica Argentina</p>        
+    </footer>
+
+    <script>
+        const value = document.querySelector("#edad_valor");
+        const input = document.querySelector("#edad");
+        value.textContent = input.value + " años";
+        input.addEventListener("input", (event) => {
+            value.textContent = event.target.value + " años";
+        });
+    </script>
+        
+    <noscript>Atencion !! .. no se encuentra habilitado el soporte a JavaScript</noscript>
+        
+</body>
+</html>
