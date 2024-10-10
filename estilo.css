@@ -120,6 +120,7 @@ html {
   display: grid;
   width: 50%;
   grid-template-columns: 1fr 1fr;
+  grid-column-gap: 10px;
 }
 
 /*
