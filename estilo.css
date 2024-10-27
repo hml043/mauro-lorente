@@ -14,7 +14,7 @@ html {
 }
 */
 
-.header_container {
+.header_container {  
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -29,7 +29,7 @@ html {
     padding-bottom: 20px;*/    
 }
 
-.nav_container {
+.nav_container {  
   float: right;
   /*display: flex;
   justify-content: flex-end;*/
@@ -74,16 +74,24 @@ html {
   margin-top: 10px;
 }
 
-.fieldset_tabla {
+.div_fix {  
+  position: fixed;  
+  width: 100%;
+  z-index: 1;
+  /*margin-bottom: 30px;*/
+}
+
+.div_tabla {
   margin-top: 25px;
 }
 
-.fieldset_legend {
+.div_legend {
   background-color: #b1cdd9;
-  border: 2px black;
+  /* border: 2px black; */
   font-size: large;
   font-style: italic;
   font-weight: bold;
+  padding: 10px;
 }
 
 .legend_form {
