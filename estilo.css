@@ -14,10 +14,40 @@ html {
 }
 */
 
+/* new */
+.btn-up {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: green;
+  color: white;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.btn-up:hover {
+  background-color: #3e8e41;
+}
+
+
 .header_container {  
   display: flex;
   flex-direction: row;
   width: 100%;
+}
+
+.header_fijar {
+  position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 .h1_index {
@@ -37,8 +67,13 @@ html {
 }
 
 .main_container {
+  padding-left: 150px;  /* new */
+  padding-right: 30px;  /* new */
+  margin-top: 190px;    /* new */
+  /* ant
   padding-left: 30px;
   margin-top: 50px;
+  */
 }
 
 .footer_container {
@@ -61,9 +96,27 @@ html {
   margin: 20px;
 }
 
+/* new */
+.logo {
+  /*width: 100px; /* Ajusta el tamaño del logo */
+  animation: rotation 5s linear;
+}
+
+/* new */
+@keyframes rotation {
+  from {
+      transform: rotateY(0deg);
+  }
+  to {
+      transform: rotateY(360deg);
+  }
+}
+
+/* out
 .article_container {
   padding-left: 100px;
 }
+*/
 
 .fieldset_form {
   margin-bottom: 25px;
