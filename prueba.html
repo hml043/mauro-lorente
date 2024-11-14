@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
+</head>
+<body>
+
+    <form action="" method="get">
+    <input type="text" class="input-valor" placeholder="Ingrese un valor">
+    <input type="radio" name="opcion" class="input-valor" value="opcion1"> Opción 1
+    <input type="radio" name="opcion" class="input-valor" value="opcion2"> Opción 2
+    <input type="checkbox" class="input-valor" value="valor-checkbox">
+    </form>
+
+    <table>
+    <thead>
+        <tr>
+        <th>Valor 1</th>
+        <th>Opción Seleccionada</th>
+        <th>Checkbox</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td id="celda-valor1"></td>
+        <td id="celda-opcion"></td>
+        <td id="celda-checkbox"></td>
+        </tr>
+        <tr>
+            <td>Valor1</td>
+            <td id="celda2-valor1"></td>
+        </tr>
+        <tr>
+            <td>Opcion</td>
+            <td id="celda2-opcion"></td>
+        </tr>
+        <tr>
+            <td>Checkbox</td>
+            <td id="celda2-checkbox"></td>
+        </tr>
+    </tbody>
+    </table>
+
+    <script>
+        // Array para relacionar elementos con columnas
+        const mapElementosColumnas = [
+        //{ selector: '.input-valor', columna: 'celda2-valor1' },
+        { selector: 'input[type="text"]', columna: 'celda2-valor1' },
+        { selector: 'input[name="opcion"]', columna: 'celda2-opcion' },
+        { selector: 'input[type="checkbox"]', columna: 'celda2-checkbox' }
+        ];
+
+        // Obtener todas las filas de la tabla
+        //const filas = document.querySelectorAll('tbody tr');
+
+        mapElementosColumnas.forEach(mapping => {
+        const elementos = document.querySelectorAll(mapping.selector);
+        elementos.forEach(elemento => {
+            elemento.addEventListener('blur', () => {
+            //const celda = filas[0].querySelector(`#${mapping.columna}`); // Asumimos una sola fila por ahora
+            //const celda = querySelector(`#${mapping.columna}`); // Asumimos una sola fila por ahora
+            //+console.log('#'+mapping.columna);            
+            const celda = document.querySelector('#'+mapping.columna);
+            //+console.log(celda);
+            switch (elemento.type) {
+                case 'text':
+                celda.textContent = elemento.value;
+                break;
+                case 'radio':
+                celda.textContent = elemento.checked ? elemento.value : '';
+                break;
+                case 'checkbox':
+                celda.textContent = elemento.checked ? 'Marcado' : 'Desmarcado';
+                break;
+            }
+            });
+        });
+        });
+    </script>    
+</body>
+</html>
