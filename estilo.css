@@ -35,7 +35,6 @@ html {
   background-color: #3e8e41;
 }
 
-
 .header_container {  
   display: flex;
   flex-direction: row;
@@ -94,6 +93,16 @@ html {
   border-bottom-left-radius: 15%;
   border-bottom-right-radius: 15%;
   margin: 20px;
+}
+
+.oculto {
+  display: none;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.button_acerca_de:hover {
+  background-color: #fcaf62;
+  cursor: pointer;  
 }
 
 /* new */

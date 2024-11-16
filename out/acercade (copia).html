@@ -21,7 +21,6 @@
             <a href="#rl">Laboral</a>
             <a href="#fp">Formacion</a>
             <a href="#po">Pasatiempos</a>
-            <a href="#cv">C.V.</a>
             <a href="prueba.html">Jugar</a>
             <a href="contacto.html">Contacto</a>
         </nav>
@@ -31,13 +30,12 @@
     <main class="main_container">
                 
         <section>
-            <!--
             <article>
                 <i class="material-icons">chevron_right</i>
                 <h2 id="cv">Acerca de mí</h2>
                 <div class="resume-summary">
                     <p>Soy un estudiante de la carrera de desarrollo web, interesado en todo lo referido a temas sobre programación y vinculados al uso de teconologia, ademas...</p>
-                    <!-- Contenido completo oculto al inicio
+                    <!-- Contenido completo oculto al inicio -->
                     <div id="full-content" class="hidden">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
                         <p>Fusce ac felis sit amet ligula pharetra condimentum. Donec vel sapien augue integer. Mauris risus eros, fringilla eu feugiat vitae, malesuada sit amet odio. Suspendisse potenti.</p>
@@ -46,7 +44,24 @@
                     <button onclick="toggleContent()" id="read-more-btn">Leer más</button>
                 </div>
             </article>
-            -->            
+
+            <div>
+            <button onclick="mostrarContenido()">Mostrar más</button>
+            <div id="contenido" style="display: none;">Contenido oculto</div>
+            </div>
+
+            <button class="button_acercade" onclick="toggleContenido()">Leer más</button>
+            <div id="miElemento" class="curriculum">Este es el contenido adicional.</div>
+
+            <article id="acerca_de">
+                <i class="material-icons">chevron_right</i>
+                <h2 id="cv">Acerca de mí</h2>
+                <p>Soy un estudiante de la carrera de desarrollo web, interesado en todo lo referido a temas sobre programación y vinculados al uso de teconologia, ademas...</p>
+                <button type="button" id="leer_mas" class="button_acercade">Leer más</button>
+                <div id="curriculum" class="oculto">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </article>
             
             <article>
                 <div class="article_container">
@@ -84,17 +99,19 @@
                 </div>
             </article>
 
-            <article id="acerca_de">
-                <i class="material-icons">chevron_right</i>
-                <h2 id="cv">Acerca de mí</h2>
-                <p>Estudiante de la carrera de desarrollo web, interesado en todo lo referido a temas sobre programación y vinculados al uso de teconologia, ademas...</p>
-                <button type="button" id="leer_mas" class="button_acerca_de">Leer más</button>
-                <div id="curriculum" class="oculto">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <article>
+                <div class="resume-summary">
+                    <p>Currículum: Soy un programador Junior con experiencia en diversas tecnologías y proyectos de software...</p>
+                    <!-- Contenido completo oculto al inicio -->
+                    <div id="full-content" class="hidden">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+                        <p>Fusce ac felis sit amet ligula pharetra condimentum. Donec vel sapien augue integer. Mauris risus eros, fringilla eu feugiat vitae, malesuada sit amet odio. Suspendisse potenti.</p>
+                        <p>Etiam imperdiet imperdiet orci. Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi.</p>
+                    </div>
+                    <button onclick="toggleContent()" id="read-more-btn">Leer más</button>
                 </div>
             </article>
+
         </section>        
     </main>
 
@@ -108,20 +125,13 @@
         <p>Dirección: Monseñor Esandi y Ricardo Balbín</p>
         <p>Viedma - Rio Negro - Republica Argentina</p>        
     </footer>
-
+<!--
     <script>
-    const botonLeerMas = document.getElementById('leer_mas');
-    const curriculum = document.getElementById('curriculum');   
-
-    botonLeerMas.addEventListener('click', () => {
-        //alert('¡Hiciste clic en el botón!');
-    console.log(botonLeerMas.textContent);
-    console.log(curriculum.textContent);
-    curriculum.classList.toggle('oculto');
-    botonLeerMas.textContent = curriculum.classList.contains('oculto') ? 'Leer más' : 'Leer menos';
-    });
+        function mostrarContenido() {
+          document.getElementById('contenido').style.display = 'block';
+        }
     </script>
-
-    <script src="script.js" defer></script>
+-->
+    <script src="script.js" defer></script> -->
 </body>
 </html>
