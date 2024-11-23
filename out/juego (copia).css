@@ -1,0 +1,137 @@
+/* Import Google font - Poppins */
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"); */
+
+* {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  box-sizing: border-box; /* Include padding and border in the element's width and height */
+  /* font-family: "Poppins", sans-serif; /* Apply the Poppins font to all elements */
+  font-family: 'Lato', sans-serif;
+}
+
+/* */
+.header_container_juego {  
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.div_juego {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+/* */
+
+.body_juego {
+  height: 100vh; /* Set the body's height to 100% of the viewport height */
+  display: flex; /* Use Flexbox for layout */
+  align-items: center; /* Vertically center the content */
+  justify-content: center; /* Horizontally center the content */
+  background-color: #ffffff;
+  /* background: #14171e; / Set a dark background color / */
+}
+
+::selection {
+  color: #fff; /* Text color when selected */
+  background-color: #000; /* Background color when selected */
+}
+
+.container {
+  padding: 2rem 7rem; /* Padding inside the container */
+  border-radius: 10px; /* Rounded corners */
+  background: #fff; /* White background color */
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.1); /* Subtle shadow around the container */    
+
+  align-self: center;
+}
+
+.resultado_imagenes {
+  display: flex; /* Use Flexbox to align images */
+  column-gap: 7rem; /* Space between user and CPU images */
+}
+
+.container.start .usuario_resultado {
+  transform-origin: left; /* Set the origin point for transformations to the left side */
+  animation: moverManos 0.7s ease infinite; /* Apply a shaking animation to the user's result */
+}
+
+@keyframes moverManos {
+  50% {
+    transform: rotate(10deg); /* Rotate the image by 10 degrees at the midpoint of the animation */
+  }
+}
+
+.container.start .cpu_resultado {
+  transform-origin: right; /* Set the origin point for transformations to the right side */
+  animation: cpuShake 0.7s ease infinite; /* Apply a shaking animation to the CPU's result */
+}
+
+@keyframes cpuShake {
+  50% {
+    transform: rotate(-10deg); /* Rotate the image by -10 degrees at the midpoint of the animation */
+  }
+}
+
+.resultado_imagenes img {
+  width: 100px; /* Set the width of the result images */
+}
+
+.usuario_resultado img {
+  transform: rotate(90deg); /* Rotate the user's result image by 90 degrees */
+}
+
+.cpu_resultado img {
+  transform: rotate(-90deg) rotateY(180deg); /* Rotate the CPU's result image by -90 degrees and flip it horizontally */
+}
+
+.resultado {
+  text-align: center; /* Center the result text */
+  font-size: 2rem; /* Set the font size of the result text */
+  color: #de0d64; /* Set the text color */
+  margin-top: 1.5rem; /* Add space above the result text */
+}
+
+.opcion_imagen img {
+  width: 50px; /* Set the width of the option images */
+}
+
+.opcion_imagenes {
+  display: flex; /* Use Flexbox to align option images */
+  align-items: center; /* Vertically align option images */
+  margin-top: 2.5rem; /* Add space above the option images */
+  justify-content: space-between; /* Distribute space between the option images */
+}
+
+.container.start .opcion_imagenes {
+  pointer-events: none; /* Disable pointer events when the game is in progress */
+}
+
+.opcion_imagen {
+  display: flex; /* Use Flexbox to align image and text vertically */
+  flex-direction: column; /* Stack image and text vertically */
+  align-items: center; /* Center the content horizontally */
+  opacity: 0.5; /* Set initial opacity for inactive state */
+  cursor: pointer; /* Change the cursor to a pointer on hover */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity change */
+}
+
+.opcion_imagen:hover {
+  opacity: 1; /* Increase opacity on hover */
+}
+
+.opcion_imagen.active {
+  opacity: 1; /* Set full opacity for the active option */
+}
+
+.opcion_imagen img {
+  pointer-events: none; /* Disable pointer events on the image itself */
+}
+
+.opcion_imagen p {
+  color: #3477eb; /* Set text color for option labels */
+  font-size: 1.235rem; /* Set font size for option labels */
+  margin-top: 1rem; /* Add space above the option labels */
+  pointer-events: none; /* Disable pointer events on the text */
+}

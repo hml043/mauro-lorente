@@ -105,6 +105,12 @@ html {
   cursor: pointer;  
 }
 
+/*
+#curriculum {
+  display: none;
+}
+*/
+
 /* new */
 .logo {
   /*width: 100px; /* Ajusta el tamaño del logo */

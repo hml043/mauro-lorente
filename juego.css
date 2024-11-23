@@ -1,0 +1,136 @@
+/* Import Google font - Poppins */
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"); */
+
+* {
+  margin: 0;              /* Eliminar margen predeterminado */
+  padding: 0;             /* Eliminar el relleno predeterminado */
+  box-sizing: border-box; /* Incluir relleno y borde en el ancho y alto del elemento */
+  /* font-family: "Poppins", sans-serif; /* Apply the Poppins font to all elements */
+  font-family: 'Lato', sans-serif;
+}
+
+/* */
+.header_container_juego {  
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.div_juego {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+/* */
+
+.body_juego {
+  height: 100vh;           /* Establezca la altura del cuerpo al 100% de la altura de la ventana gráfica */
+  display: flex;           /* Utilice Flexbox para el diseño */
+  align-items: center;     /* Centrar verticalmente el contenido */
+  justify-content: center; /* Centrar horizontalmente el contenido */
+  background-color: #ffffff;  
+}
+
+::selection {
+  color: #fff;            /* Color del texto cuando se selecciona */
+  background-color: #000; /* Color de fondo cuando se selecciona */
+}
+
+.container {
+  padding: 2rem 7rem;   /* Padding dentro del contenedor */
+  border-radius: 10px;  /* esquinas redondeadas */
+  background: #fff;   /* fondo blsanco */
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.1); /* Sombra sutil alrededor del contenedor. */    
+
+  align-self: center;
+}
+
+.resultado_imagenes {
+  display: flex;    /* Usar Flexbox para alinear las imagenes */
+  column-gap: 7rem; /* Espacio entre las imagenes del usuaario y la CPU */
+}
+
+.container.start .usuario_resultado {
+  transform-origin: left;                   /* Establecer el punto de origen para transformaciones en el lado izquierdo */
+  animation: moverManos 0.7s ease infinite; /* Aplicar una animación de vibración (shaking) al resultado del usuario. */
+}
+
+@keyframes moverManos {
+  50% {
+    transform: rotate(10deg); /* Gira la imagen 10 grados en el punto medio de la animación. */
+  }
+}
+
+.container.start .cpu_resultado {
+  transform-origin: right;                /* Establecer el punto de origen para transformaciones hacia el lado derecho */
+  animation: cpuShake 0.7s ease infinite; /* Aplicar una animación de vibración (shaking) al resultado de la CPU. */
+}
+
+@keyframes cpuShake {
+  50% {
+    transform: rotate(-10deg); /* Gira la imagen -10 grados en el punto medio de la animación */
+  }
+}
+
+.resultado_imagenes img {
+  width: 100px; /* Establecer el ancho de las imágenes resultantes. */
+}
+
+.usuario_resultado img {
+  transform: rotate(90deg); /* Girar la imagen de resultados del usuario 90 grados. */
+}
+
+.cpu_resultado img {
+  transform: rotate(-90deg) rotateY(180deg); /* Gire la imagen resultante de la CPU -90 grados y gírela horizontalmente */
+}
+
+.resultado {
+  text-align: center; /* Centrar el texto del resultado */
+  font-size: 2rem;    /* Establecer el tamaño de fuente del texto resultante */
+  color: #de0d64;   /* Establecer el color del texto */
+  margin-top: 1.5rem; /* Agregue espacio encima del texto del resultado */
+}
+
+.opcion_imagen img {
+  width: 50px; /* Establecer el ancho de las imágenes de opción. */
+}
+
+.opcion_imagenes {
+  display: flex;        /* Utilice Flexbox para alinear imágenes de opciones */
+  align-items: center;  /* Alinear verticalmente imágenes de opciones */
+  margin-top: 2.5rem;   /* Añade espacio encima de las imágenes de opción. */
+  justify-content: space-between; /* Distribuir espacio entre las imágenes de opciones. */
+}
+
+.container.start .opcion_imagenes {
+  pointer-events: none; /* Deshabilitar eventos de puntero cuando el juego esté en progreso */
+}
+
+.opcion_imagen {
+  display: flex;            /* Utilice Flexbox para alinear imágenes y texto verticalmente */
+  flex-direction: column;   /* Apilar imagen y texto verticalmente */
+  align-items: center;      /* Centrar el contenido horizontalmente */
+  opacity: 0.5;             /* Establecer opacidad inicial para estado inactivo */
+  cursor: pointer;          /* Cambiar el cursor a un puntero al pasar el cursor */
+  transition: opacity 0.3s ease; /* Transición suave para el cambio de opacidad */
+}
+
+.opcion_imagen:hover {
+  opacity: 1; /* Aumentar la opacidad al pasar el mouse */
+}
+
+.opcion_imagen.active {
+  opacity: 1; /* Establecer opacidad total para la opción activa */
+}
+
+.opcion_imagen img {
+  pointer-events: none; /* Deshabilitar eventos de puntero en la propia imagen */
+}
+
+.opcion_imagen p {
+  color: #3477eb;     /* Establecer color de texto para etiquetas de opciones */
+  font-size: 1.235rem;  /* Establecer el tamaño de fuente para las etiquetas de opciones */
+  margin-top: 1rem;     /* Agregue espacio encima de las etiquetas de opciones */
+  pointer-events: none; /* Deshabilitar eventos de puntero en el texto */
+}
